@@ -1,4 +1,5 @@
 # easysearchdebugingtestproject
-attempt to isolate and re-create a bug related to the meteor easy search package
 
-bug posted at https://github.com/matteodem/meteor-easy-search/issues/210
+A example app showing the use of aldeed autoforms, meteor easy search, inserting a array of strings and searching for items in that array.
+
+This started as an attempt to isolate and re-create a bug.

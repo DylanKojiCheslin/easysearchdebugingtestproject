@@ -10,7 +10,6 @@ Items = new Mongo.Collection("Items");
 EasySearch.createSearchIndex('words', {
   'field' : 'words',
   'collection' : Items,
-  // 'limit' : 20,
   'use' : 'mongo-db',
   'props' : {
   'query' : function (searchString, opts) {
