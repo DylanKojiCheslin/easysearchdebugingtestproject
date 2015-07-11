@@ -1,4 +1,11 @@
-
+ItemSchema = new SimpleSchema({
+  words: {
+    type: String,
+    label: "Question",
+    max: 600,
+    min: 2
+  }
+});
 Items = new Mongo.Collection("Items");
 EasySearch.createSearchIndex('words', {
   'field' : 'words',
@@ -14,3 +21,4 @@ EasySearch.createSearchIndex('words', {
     }
   }
 });
+Items.attachSchema(ItemSchema);

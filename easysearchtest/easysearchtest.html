@@ -3,6 +3,10 @@
 </head>
 
 <body>
+{{> addWordTemplate}}
+
+  ------------------------------
+
   {{> searchBox}}
 </body>
 <template name="searchBox">
@@ -12,4 +16,14 @@
             the words: {{words}}
             </ul> - -
         {{/esEach}}
+</template>
+
+<template name="addWordTemplate">
+    {{#autoForm collection="Items" id="addWordForm" type="insert"}}
+      <fieldset>
+        <legend>Add a word</legend>
+        {{> afQuickField name='words'}}
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Insert</button>
+    {{/autoForm}}
 </template>
