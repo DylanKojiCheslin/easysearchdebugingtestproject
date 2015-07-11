@@ -1,23 +1,16 @@
-if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
+Items = new Mongo.Collection("Items");
+EasySearch.createSearchIndex('words', {
+  'field' : 'words',
+  'collection' : Items,
+  // 'limit' : 20,
+  'use' : 'mongo-db',
+  'props' : {
+  'query' : function (searchString, opts) {
+    // Default query
+    var query = EasySearch.getSearcher(this.use).defaultQuery(this, searchString);
+
+    return query;
     }
-  });
-
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
-  });
-}
-
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
-}
+  }
+});
