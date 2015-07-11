@@ -1,6 +1,6 @@
 ItemSchema = new SimpleSchema({
   words: {
-    type: String,
+    type: [String],
     label: "Question",
     max: 600,
     min: 2

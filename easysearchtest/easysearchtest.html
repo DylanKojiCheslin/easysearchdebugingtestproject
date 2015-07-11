@@ -12,9 +12,7 @@
 <template name="searchBox">
   {{> esInput index="words" placeholder="Search words" }}
         {{#esEach index="words"}}
-            <ul>
-            the words: {{words}}
-            </ul> - -
+            {{> wordSayinTemplate}} - -
         {{/esEach}}
 </template>
 
@@ -26,4 +24,8 @@
       </fieldset>
       <button type="submit" class="btn btn-primary">Insert</button>
     {{/autoForm}}
+</template>
+
+<template name="wordSayinTemplate">
+  the words: {{words}}
 </template>
